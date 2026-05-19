@@ -67,3 +67,303 @@
   </section>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacquelyn Veatch</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 25px 40px;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-top: 10px;
+    }
+
+    .profile {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #7dd3fc;
+    }
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      margin-right: 18px;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 20px 25px 80px;
+    }
+
+    section {
+      margin-top: 55px;
+    }
+
+    h2 {
+      color: #7dd3fc;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 18px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .figure-card img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #334155;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border: 1px solid #7dd3fc;
+      border-radius: 8px;
+      color: #7dd3fc;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      color: #94a3b8;
+      padding: 30px;
+      border-top: 1px solid #1f2937;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .profile {
+        margin: auto;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>Jacquelyn Veatch, Ph.D.</h1>
+      <p class="subtitle">
+        Physical Oceanographer | NSF OCE Postdoctoral Research Fellow<br>
+        Woods Hole Oceanographic Institution
+      </p>
+
+      <p>
+        I am a physical oceanographer studying ocean fronts, eddies,
+        Lagrangian transport, and biological–physical interactions in coastal
+        and polar marine systems.
+      </p>
+
+      <nav>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#figures">Figures</a>
+        <a href="#teaching">Teaching</a>
+        <a href="assets/Veatch_CV.pdf">CV</a>
+        <a href="mailto:veatchjackie@gmail.com">Contact</a>
+      </nav>
+    </div>
+
+    <img src="assets/profile.jpg" alt="Jacquelyn Veatch" class="profile">
+  </header>
+
+  <main>
+
+    <section id="research">
+      <h2>Research</h2>
+      <div class="card">
+        <p>
+          My research uses observations, satellite data, high-frequency radar,
+          numerical models, and Lagrangian diagnostics to understand how ocean
+          circulation shapes transport, ecosystem structure, and biological
+          hotspots.
+        </p>
+
+        <ul>
+          <li>Lagrangian coherent structures, FTLE, and FSLE</li>
+          <li>Ocean fronts, eddies, and shelf-slope exchange</li>
+          <li>Biological–physical interactions in marine food webs</li>
+          <li>High-frequency radar, satellite altimetry, and ocean observing</li>
+          <li>Coastal and polar oceanography</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+
+      <div class="card">
+        <strong>Veatch et al. 2025</strong><br>
+        Attractive Lagrangian Features in the Mid-Atlantic Bight: Using
+        Lagrangian Coherent Structures to Describe Seasonal and Interannual
+        Changes in Circulation. <em>Journal of Geophysical Research: Oceans</em>.
+        <br>
+        <a href="https://doi.org/10.1029/2025JC022447">DOI</a>
+      </div>
+
+      <div class="card">
+        <strong>Veatch et al. 2025</strong><br>
+        Lagrangian coherent structures influence the spatial structure of
+        marine food webs. <em>Communications Earth & Environment</em>.
+        <br>
+        <a href="https://doi.org/10.1038/s43247-025-02101-x">DOI</a>
+      </div>
+
+      <div class="card">
+        <strong>Veatch et al. 2024</strong><br>
+        Quantifying the role of sub-mesoscale Lagrangian transport features in
+        the concentration of plankton in a coastal system.
+        <em>ICES Journal of Marine Science</em>.
+        <br>
+        <a href="https://doi.org/10.1093/icesjms/fsae036">DOI</a>
+      </div>
+
+      <div class="card">
+        <strong>McKee, Veatch et al. 2025</strong><br>
+        Disentangling advection and Lagrangian evolution of surface chlorophyll
+        in a nearshore submarine canyon using remote sensing and
+        high-frequency radar. <em>Journal of Geophysical Research: Oceans</em>.
+        <br>
+        <a href="https://doi.org/10.1029/2024JC022101">DOI</a>
+      </div>
+    </section>
+
+    <section id="figures">
+      <h2>Example Figures</h2>
+
+      <div class="grid">
+        <div class="figure-card card">
+          <img src="assets/figure1.jpg" alt="Example research figure">
+          <p><strong>Lagrangian transport features</strong><br>
+          Example caption describing FTLE, FSLE, or LCS results.</p>
+        </div>
+
+        <div class="figure-card card">
+          <img src="assets/figure2.jpg" alt="Example research figure">
+          <p><strong>Ocean fronts and ecosystems</strong><br>
+          Example caption describing biological–physical interactions.</p>
+        </div>
+
+        <div class="figure-card card">
+          <img src="assets/figure3.jpg" alt="Example research figure">
+          <p><strong>Field observations</strong><br>
+          Example caption describing observational or fieldwork results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching & Outreach</h2>
+
+      <div class="card">
+        <p>
+          I teach and develop programming, oceanography, and marine technology
+          learning experiences for students ranging from high school to graduate
+          level.
+        </p>
+
+        <ul>
+          <li>Programming in Earth Science Classrooms Educational Workshop</li>
+          <li>Python for Climate Science Workshop Instructor</li>
+          <li>High school Computer Science instructor at Falmouth Academy</li>
+          <li>Marine Technology Society micro-credential guest lecturer</li>
+          <li>Public outreach in marine science and ocean observing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="fieldwork">
+      <h2>Field Experience</h2>
+
+      <div class="card">
+        <p>
+          My field experience includes Arctic fjord work aboard the
+          <em>RV Marie Tharp</em>, early-career chief scientist training aboard
+          the <em>USCGC Healy</em>, Antarctic field seasons at Palmer Station,
+          glider operations, high-frequency radar deployments, CTD casts,
+          plankton sampling, and small-boat surveys.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:veatchjackie@gmail.com">veatchjackie@gmail.com</a>
+      </p>
+
+      <a class="button" href="assets/Veatch_CV.pdf">Download CV</a>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Jacquelyn Veatch
+  </footer>
+
+</body>
+</html>
