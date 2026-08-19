@@ -1,377 +1,595 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacquelyn Veatch, Ph.D.</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jacquelyn Veatch is a physical oceanographer studying how ocean circulation structures marine ecosystems and carbon cycling.">
+  <meta name="theme-color" content="#082f3d">
+  <title>Jacquelyn Veatch, Ph.D. | Physical Oceanographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --ink: #102d35;
+      --muted: #536a70;
+      --paper: #f7f5ef;
+      --white: #fffefa;
+      --ocean: #0d5968;
+      --deep: #082f3d;
+      --ice: #bce4e5;
+      --coral: #ea7658;
+      --line: rgba(16, 45, 53, .15);
+      --shadow: 0 20px 60px rgba(8, 47, 61, .12);
     }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: #05070a;
-      color: #f5f7fa;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
     }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { color: var(--ocean); }
+    :focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+    section { scroll-margin-top: 92px; }
 
-    a {
-      color: #67c7f7;
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 100;
+      padding: .7rem 1rem;
+      background: var(--white);
+      color: var(--deep);
+      border-radius: 99px;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 245, 239, .91);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      width: min(1160px, calc(100% - 40px));
+      min-height: 72px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .wordmark {
+      font-family: "Newsreader", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links .nav-cta {
+      padding: .55rem .9rem;
+      color: var(--white);
+      background: var(--deep);
+      border-radius: 99px;
     }
 
     .hero {
-      min-height: 310px;
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: start;
+      overflow: hidden;
+      color: white;
+      background: var(--deep);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)),
-        url("assets/figure3.jpg");
-      background-size: cover;
-      background-position: center;
+        linear-gradient(90deg, rgba(5, 35, 46, .08) 0%, rgba(5, 35, 46, .48) 52%, rgba(5, 35, 46, .9) 100%),
+        linear-gradient(0deg, rgba(5, 35, 46, .65) 0%, transparent 55%),
+        url("assets/header-gould.jpg") center center / cover;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 140px 0 76px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+    .eyebrow {
       display: flex;
       align-items: center;
-      padding: 60px 8%;
-    }
-
-    .hero h1 {
-      font-size: 3.4rem;
-      margin: 0;
-      letter-spacing: 0.5px;
-    }
-
-    .hero p {
-      margin: 8px 0;
-      font-size: 1.25rem;
-      color: #e5e7eb;
-    }
-
-    .hero .affiliation {
-      color: #67c7f7;
-    }
-
-    nav {
-      background: #07090d;
-      border-bottom: 1px solid #1f2937;
-      padding: 18px 8%;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: #f5f7fa;
-      margin-right: 32px;
-      font-size: 0.9rem;
-      font-weight: bold;
+      gap: .75rem;
+      margin: 0 0 1rem;
+      color: var(--ice);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      letter-spacing: 0.7px;
     }
-
-    nav a:hover {
-      color: #67c7f7;
+    .eyebrow::before { content: ""; width: 36px; height: 2px; background: currentColor; }
+    h1, h2, h3 { font-family: "Newsreader", serif; line-height: 1.03; }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3.5rem, 8.2vw, 7.2rem);
+      font-weight: 500;
+      letter-spacing: -.045em;
+    }
+    .hero-copy {
+      max-width: 700px;
+      margin: 1.4rem 0 0;
+      color: rgba(255, 255, 255, .9);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.5;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .7rem 1.15rem;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 99px;
+      color: white;
+      font-weight: 700;
       text-decoration: none;
     }
+    .button:hover { color: var(--deep); background: white; }
+    .button.primary { border-color: var(--coral); background: var(--coral); color: #172f35; }
+    .button.primary:hover { background: #ff8e70; }
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 50px 8%;
+    .section {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+      padding: 110px 0;
+    }
+    .section-heading {
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 55px;
+      grid-template-columns: minmax(220px, .75fr) 1.7fr;
+      gap: 70px;
+      margin-bottom: 52px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
     }
+    .section-heading h2 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); font-weight: 500; letter-spacing: -.035em; }
+    .section-heading p { max-width: 700px; margin: .4rem 0 0; color: var(--muted); font-size: 1.08rem; }
 
-    .sidebar img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 4px;
-      border: 1px solid #334155;
-      display: block;
-      margin-bottom: 24px;
+    .about-grid { display: grid; grid-template-columns: 1.45fr .8fr; gap: 90px; align-items: start; }
+    .lead { margin: 0 0 1.4rem; font-family: "Newsreader", serif; font-size: clamp(1.6rem, 2.9vw, 2.35rem); line-height: 1.35; }
+    .about-copy p:not(.lead) { color: var(--muted); }
+    .quick-facts { margin: 0; }
+    .quick-facts div { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .quick-facts dt { color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .quick-facts dd { margin: .25rem 0 0; font-weight: 600; }
+
+    .projects-wrap { color: white; background: var(--deep); }
+    .projects-wrap .section-heading { border-color: rgba(255, 255, 255, .22); }
+    .projects-wrap .section-heading p { color: rgba(255,255,255,.7); }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project {
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 22px;
+      background: rgba(255,255,255,.06);
     }
+    .project img, .project video { width: 100%; height: 300px; object-fit: cover; }
+    .project .data-visual { object-fit: contain; background: #fff; }
+    .project-body { display: flex; flex: 1; flex-direction: column; padding: 26px; }
+    .tag { color: var(--ice); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .project h3 { margin: .7rem 0; font-size: 1.8rem; font-weight: 500; line-height: 1.12; }
+    .project p { margin: 0; color: rgba(255,255,255,.72); font-size: .95rem; line-height: 1.6; }
+    .project .text-link { margin-top: auto; padding-top: 1.2rem; color: white; font-weight: 700; }
 
-    .sidebar p {
-      color: #d1d5db;
-    }
-
-    .contact-list {
-      margin-top: 28px;
-    }
-
-    .contact-list p {
-      margin: 13px 0;
-    }
-
-    .cv-button {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 12px 20px;
-      border: 1px solid #67c7f7;
-      color: #9bdcff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
-
-    section {
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      color: #f8fafc;
-      font-size: 1.35rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 1px solid #67c7f7;
-      padding-bottom: 8px;
-      margin-bottom: 22px;
-    }
-
-    ul {
-      padding-left: 24px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .publication {
-      margin-bottom: 24px;
-      color: #e5e7eb;
-    }
-
-    .publication strong {
-      color: #ffffff;
-    }
-
-    .publication em {
-      color: #d1d5db;
-    }
-
-    .figure-grid {
+    .publication-list { list-style: none; margin: 0; padding: 0; }
+    .publication-list li {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+      grid-template-columns: 70px 1fr auto;
+      gap: 26px;
+      align-items: start;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
     }
+    .pub-year { color: var(--ocean); font-weight: 700; }
+    .pub-title { display: block; margin-bottom: .35rem; font-family: "Newsreader", serif; font-size: 1.4rem; line-height: 1.22; }
+    .pub-authors { color: var(--muted); font-size: .9rem; }
+    .pub-link { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .section-footer { margin-top: 34px; text-align: right; }
+    .section-footer a { font-weight: 700; }
 
-    .figure-card img {
+    .impact-band { background: #dceced; }
+    .impact-grid { display: grid; grid-template-columns: .9fr 1.4fr; gap: 90px; }
+    .impact-grid h2 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); font-weight: 500; letter-spacing: -.035em; }
+    .impact-items { display: grid; gap: 0; }
+    .impact-item { padding: 0 0 28px; margin-bottom: 28px; border-bottom: 1px solid rgba(16, 45, 53, .18); }
+    .impact-item h3 { margin: 0 0 .55rem; font-size: 1.55rem; font-weight: 600; }
+    .impact-item p { margin: 0; color: var(--muted); }
+    .resource-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
+    .resource-links a {
+      padding: .55rem .8rem;
+      border: 1px solid rgba(16, 45, 53, .25);
+      border-radius: 99px;
+      color: var(--deep);
+      font-size: .82rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .resource-links a:hover { background: var(--white); }
+    .teaching-showcase {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      margin-top: 54px;
+    }
+    .teaching-showcase img {
       width: 100%;
-      height: 190px;
+      height: 560px;
+      min-height: 420px;
       object-fit: cover;
-      border: 1px solid #334155;
-      border-radius: 3px;
+      border-radius: 22px;
     }
-
-    .figure-card p {
-      margin-top: 10px;
-      color: #d1d5db;
-      font-size: 0.95rem;
+    .thesis-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(30px, 5vw, 58px);
+      border-radius: 22px;
+      color: white;
+      background: var(--deep);
     }
+    .thesis-card h3 { margin: .65rem 0 1rem; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; }
+    .thesis-card p { color: rgba(255,255,255,.72); }
+    .thesis-card .button { align-self: flex-start; margin-top: 1rem; }
 
-    footer {
-      border-top: 1px solid #1f2937;
-      text-align: center;
-      padding: 32px;
-      color: #94a3b8;
+    .field-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .field-card { min-height: 340px; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); box-shadow: var(--shadow); }
+    .field-card img { width: 100%; height: 250px; object-fit: cover; }
+    .field-card-body { padding: 30px; }
+    .field-card .date { color: var(--coral); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .field-card h3 { margin: .8rem 0; font-size: 1.8rem; font-weight: 600; }
+    .field-card p { color: var(--muted); }
+    .field-gallery-intro { max-width: 730px; margin: 70px 0 24px; }
+    .field-gallery-intro h3 { margin: 0 0 .65rem; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 500; }
+    .field-gallery-intro p { margin: 0; color: var(--muted); }
+    .field-gallery { columns: 3 280px; column-gap: 18px; }
+    .field-gallery figure { display: inline-block; width: 100%; margin: 0 0 22px; break-inside: avoid; }
+    .field-gallery img { width: 100%; height: auto; border-radius: 22px; }
+    .field-gallery figcaption { margin: .65rem .25rem 0; color: var(--muted); font-size: .84rem; }
+
+    .contact { color: white; background: var(--ocean); }
+    .contact .section { padding: 90px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1.4fr .8fr; gap: 70px; align-items: end; }
+    .contact h2 { max-width: 760px; margin: 0; font-size: clamp(3rem, 7vw, 6rem); font-weight: 500; letter-spacing: -.04em; }
+    .contact p { max-width: 640px; color: rgba(255,255,255,.75); }
+    .contact-links { display: grid; gap: .8rem; justify-items: start; }
+    .contact-links a { font-weight: 700; }
+
+    footer { padding: 26px 20px; color: var(--muted); background: var(--paper); font-size: .82rem; text-align: center; }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { min-height: 680px; }
+      .hero::before { background-position: 58% center; }
+      .section-heading, .about-grid, .impact-grid, .teaching-showcase, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project { min-height: 0; }
+      .project img, .project video { height: 310px; }
+      .teaching-showcase img { height: 480px; }
+      .field-grid { grid-template-columns: 1fr; }
+      .field-gallery { columns: 2 260px; }
     }
-
-    @media (max-width: 850px) {
-      .hero h1 {
-        font-size: 2.4rem;
+    @media (max-width: 620px) {
+      body { font-size: 16px; }
+      .nav-inner, .section, .hero-inner { width: min(100% - 28px, 1160px); }
+      .wordmark { font-size: 1.1rem; }
+      .nav-cta { font-size: .7rem !important; }
+      .hero { min-height: 690px; }
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(5,35,46,.96) 0%, rgba(5,35,46,.52) 72%, rgba(5,35,46,.2) 100%),
+          url("assets/header-gould.jpg") 35% center / cover;
       }
-
-      nav a {
-        display: inline-block;
-        margin: 8px 18px 8px 0;
-      }
-
-      .container {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar img {
-        max-width: 360px;
-      }
+      .hero-inner { padding-bottom: 42px; }
+      .section { padding: 76px 0; }
+      .section-heading { margin-bottom: 34px; }
+      .project img, .project video { height: 230px; }
+      .field-gallery { columns: 1; }
+      .publication-list li { grid-template-columns: 55px 1fr; gap: 14px; }
+      .pub-link { grid-column: 2; }
     }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="hero">
-    <div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="wordmark" href="#top">Jacquelyn Veatch, Ph.D.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a class="nav-cta" href="assets/Veatch_CV_Aug2026.pdf">Download CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Physical oceanographer · Woods Hole, Massachusetts</p>
       <h1>Jacquelyn Veatch, Ph.D.</h1>
-      <p>Physical Oceanographer</p>
-      <p class="affiliation">NSF OCE Postdoctoral Research Fellow</p>
-      <p class="affiliation">Woods Hole Oceanographic Institution</p>
+      <p class="hero-copy">I study how moving water organizes life in the ocean—from plankton to whales and many steps in between.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#research">Explore my research</a>
+        <a class="button" href="mailto:jveatch@whoi.edu">Get in touch</a>
+      </div>
     </div>
   </header>
 
-  <nav>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#figures">Figures</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#fieldwork">Field Experience</a>
-    <a href="assets/Veatch_CV.pdf">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main class="container">
-
-    <aside class="sidebar">
-      <img src="assets/profile.jpg" alt="Jacquelyn Veatch">
-
-      <p>
-        Jacquelyn's (Jackie's) research investigates how physical ocean features structure 
-        marine ecosystems. Her current research at WHOI explores the impact of frontal dynamics 
-        in the Antarctic Circumpolar Current on episodic biological production and subduction of 
-        organic material. This is done through the use of satellite data, in-situ measurements, 
-        and Lagrangian diagnostic techniques applied to surface current data. The goal of this work 
-        is to define physical initiation mechanisms that signal the occurrence of episodic primary 
-        production and carbon export events from surface velocity fields. Results aim to improve our 
-        understanding of the contribution of fronts to the Southern Ocean carbon cycle. During her 
-        PhD at the Rutgers University Center for Ocean Observing Leadership, Jackie studied how coastal 
-        currents transport and aggregate plankton at the base of the food web, increasing foraging 
-        efficiency for upper trophic creatures in Palmer Deep, Antarctica and the Mid-Atlantic Bight. 
-        Her other research interests include other transport-driven ocean processes, the spatial ecology 
-        of food web focusing, the effective use and dissemination of code and large data, communicating 
-        scientific results to large audiences, and increasing the participation of traditionally undertapped 
-        talent in ocean sciences. 
-      </p>
-
-      <div class="contact-list" id="contact">
-        <p>✉️ <a href="mailto:jveatch@whoi.edu">jveatch@whoi.edu</a></p>
-        <p>📍 Woods Hole, MA</p>
-        <p>🔗 <a href="https://scholar.google.com/citations?user=aiHtKXMAAAAJ&hl=en">Google Scholar</a></p>
-        <p>🔗 <a href="https://orcid.org/0000-0002-1267-8383">ORCID</a></p>
-        <p>🔗 <a href="https://github.com/JackieVeatch">GitHub</a></p>
+  <main id="main">
+    <section class="section" id="about">
+      <div class="section-heading">
+        <h2>About</h2>
+        <p>Ocean circulation creates fronts, eddies, and convergent features that shape where organisms gather and where carbon moves. My work connects those physical dynamics to ecological outcomes.</p>
       </div>
-
-      <a class="cv-button" href="assets/Veatch_CV.docx">Download CV</a>
-    </aside>
-
-    <section class="content">
-
-      <section id="research">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Lagrangian coherent structures, FTLE, and FSLE</li>
-          <li>Ocean fronts, eddies, and shelf-slope exchange</li>
-          <li>Biological–physical interactions in marine food webs</li>
-          <li>High-frequency radar, satellite altimetry, and ocean observing</li>
-          <li>Coastal and polar oceanography</li>
-        </ul>
-      </section>
-
-      <section id="publications">
-        <h2>Selected Publications</h2>
-
-        <div class="publication">
-          <strong>Veatch, J., Fredj, E., Oliver, M., Roarty, H., Kohut, J. 2025.</strong>
-          Attractive Lagrangian Features in the Mid-Atlantic Bight: Using Lagrangian
-          Coherent Structures to Describe Seasonal and Interannual Changes in Circulation.
-          <em>Journal of Geophysical Research: Oceans</em>, 130, e2025JC022447.
-          <br>
-          <a href="https://doi.org/10.1029/2025JC022447">https://doi.org/10.1029/2025JC022447</a>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="lead">I am an NSF Ocean Sciences Postdoctoral Research Fellow at Woods Hole Oceanographic Institution.</p>
+          <p>My current research examines how Antarctic Circumpolar Current fronts contribute to episodic biological production and the subduction of organic material. I combine satellite observations, in-situ measurements, and Lagrangian diagnostics to identify the physical signals that precede these events.</p>
+          <p>During my Ph.D. at Rutgers University’s Center for Ocean Observing Leadership, I investigated how coastal currents transport and concentrate plankton in Palmer Deep, Antarctica, and the Mid-Atlantic Bight. Across my research, teaching, and outreach, I aim to make ocean data and the insights it contains more useful and accessible.</p>
         </div>
-
-        <div class="publication">
-          <strong>McKee, D., Veatch, J., Kavanaugh, M., Kohut, J., Doney, S. 2025.</strong>
-          Disentangling advection and Lagrangian evolution of surface chlorophyll in a nearshore
-          submarine canyon using remote sensing and high-frequency radar.
-          <em>Journal of Geophysical Research: Oceans</em>, 130, e2024JC022101.
-          <br>
-          <a href="https://doi.org/10.1029/2024JC022101">https://doi.org/10.1029/2024JC022101</a>
-        </div>
-        
-        <div class="publication">
-          <strong>Veatch, J., Oliver, M., Fredj, E., Statscewich, H., Bernard, K., Hann, A., Voirol, G., Fuchs, H., Fraser, W., Kohut, J. 2025.</strong>
-          Lagrangian coherent structures influence the spatial structure of marine food webs.
-          <em>Communications Earth & Environment</em>, 6, 127.
-          <br>
-          <a href="https://doi.org/10.1038/s43247-025-02101-x">https://doi.org/10.1038/s43247-025-02101-x</a>
-        </div>
-
-        <div class="publication">
-          <strong>Veatch, J., Kohut, J., Oliver, M., Statscewich, H., Fredj, E. 2024.</strong>
-          Quantifying the role of sub-mesoscale Lagrangian transport features in the
-          concentration of plankton in a coastal system.
-          <em>ICES Journal of Marine Science</em>.
-          <br>
-          <a href="https://doi.org/10.1093/icesjms/fsae036">https://doi.org/10.1093/icesjms/fsae036</a>
-        </div>
-      </section>
-
-      <section id="figures">
-        <h2>Featured Figures</h2>
-
-        <div class="figure-grid">
-          <div class="figure-card">
-            <img src="assets/figure1.jpeg" alt="Lagrangian coherent structures figure">
-            <p>
-              Lagrangian transport features and finite-time Lyapunov exponent structure.
-            </p>
-          </div>
-
-          <div class="figure-card">
-            <img src="assets/figure2.jpg" alt="Oceanographic figure">
-            <p>
-              Ocean fronts, circulation, or biological–physical interaction example figure.
-            </p>
-          </div>
-
-          <div class="figure-card">
-            <img src="assets/figure3.jpg" alt="Fieldwork or oceanographic figure">
-            <p>
-              Fieldwork, ocean observing, or research image from recent projects.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="teaching">
-        <h2>Teaching & Outreach</h2>
-        <p>
-          My primary goal as an educator is to ignite curiosity in my students and help them move toward their 
-          goals with resilient enthusiasm. Whether they aim to pursue a career in research, join the blue tech 
-          workforce, or simply pass my class, I want them to use science as a gateway to analytical reasoning, 
-          critical thinking, and self-development. My teaching style emphasizes guided problem-solving, engaging 
-          curriculum design, and a flipped-classroom structure when possible that promotes the development of 
-          transferable skills.
-        </p>
-
-        <ul>
-          <li>Programming in Earth Science Classrooms Educational Workshop</li>
-          <li>Python for Climate Science Workshop Instructor</li>
-          <li>High school Computer Science instructor at Falmouth Academy</li>
-          <li>Marine Technology Society micro-credential guest lecturer</li>
-        </ul>
-      </section>
-
-      <section id="fieldwork">
-        <h2>Field Experience</h2>
-        <p>
-          My field experience includes Arctic fjord work aboard the <em>RV Marie Tharp</em>,
-          early-career chief scientist training aboard the <em>USCGC Healy</em>, Antarctic
-          field seasons at Palmer Station, glider operations, high-frequency radar deployments,
-          CTD casts, plankton sampling, and small-boat surveys.
-        </p>
-      </section>
-
+        <dl class="quick-facts">
+          <div><dt>Current role</dt><dd>NSF OCE Postdoctoral Research Fellow</dd></div>
+          <div><dt>Affiliation</dt><dd>Woods Hole Oceanographic Institution</dd></div>
+          <div><dt>Methods</dt><dd>Ocean observing systems, Satellite Oceanography, in-situ observations, Lagrangian simulations</dd></div>
+        </dl>
+      </div>
     </section>
 
+    <section class="projects-wrap" id="research">
+      <div class="section">
+        <div class="section-heading">
+          <h2>Research</h2>
+          <p>My work moves between theory, observation, and field operations to understand the mechanisms that connect circulation to marine ecosystems.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <video class="data-visual" controls playsinline preload="metadata" poster="assets/fsle-snapshot.png" aria-label="Animation of finite-size Lyapunov exponent features and particle trajectories across the Southern Ocean">
+              <source src="assets/fsle-animation.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="assets/fsle-animation.mp4">Download the FSLE animation</a>.
+            </video>
+            <div class="project-body">
+              <span class="tag">Southern Ocean · Current</span>
+              <h3>Fronts, production, and carbon export</h3>
+              <p>Identifying how energetic Antarctic Circumpolar Current fronts initiate episodic biological production and move organic material below the surface.</p>
+              <a class="text-link" href="https://www.whoi.edu/what-we-do/understand/departments-centers-labs/aope/aope-people/postdocs/" target="_blank" rel="noreferrer">WHOI profile ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <img src="assets/figure1.jpg" alt="An ocean-observing instrument floating in calm Antarctic waters">
+            <div class="project-body">
+              <span class="tag">Antarctica · Ph.D. research</span>
+              <h3>Currents that focus marine food webs</h3>
+              <p>Using high-frequency radar and Lagrangian coherent structures to reveal where coastal currents gather plankton and create productive feeding locations.</p>
+              <a class="text-link" href="https://doi.org/10.1038/s43247-025-02101-x" target="_blank" rel="noreferrer">Read the study ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <img src="assets/hfr-sunset.png" alt="A high-frequency radar antenna overlooking the ocean at sunset">
+            <div class="project-body">
+              <span class="tag">Mid-Atlantic Bight</span>
+              <h3>A Lagrangian view of coastal circulation</h3>
+              <p>Mapping attractive transport features to describe seasonal and interannual circulation changes across a dynamic continental shelf.</p>
+              <a class="text-link" href="https://doi.org/10.1029/2025JC022447" target="_blank" rel="noreferrer">Read the study ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <img src="assets/peces-workshop.jpg" alt="Participants in the Programming in Earth Science Classrooms Educational Workshop">
+            <div class="project-body">
+              <span class="tag">Education · 2026</span>
+              <h3>Programming in Earth Science Classrooms</h3>
+              <p>I organized PECES, a three-day collaborative workshop that combined instruction with interactive sessions to help early-career educators confidently bring programming into Earth-science classrooms.</p>
+              <a class="text-link" href="#teaching">Explore teaching resources ↓</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="section-heading">
+        <h2>Selected publications</h2>
+        <p>Peer-reviewed work on Lagrangian transport, ocean observing, and physical–biological interactions. Jacquelyn Veatch is shown as <strong>Veatch</strong>.</p>
+      </div>
+      <ol class="publication-list">
+        <li>
+          <span class="pub-year">2025</span>
+          <div><span class="pub-title">Attractive Lagrangian Features in the Mid-Atlantic Bight</span><span class="pub-authors"><strong>Veatch</strong>, Fredj, Oliver, Roarty &amp; Kohut · <em>Journal of Geophysical Research: Oceans</em></span></div>
+          <a class="pub-link" href="https://doi.org/10.1029/2025JC022447" target="_blank" rel="noreferrer">DOI ↗</a>
+        </li>
+        <li>
+          <span class="pub-year">2025</span>
+          <div><span class="pub-title">Lagrangian coherent structures influence the spatial structure of marine food webs</span><span class="pub-authors"><strong>Veatch</strong>, Oliver, Fredj, Statscewich, Bernard, Hann, Voirol, Fuchs, Fraser &amp; Kohut · <em>Communications Earth &amp; Environment</em></span></div>
+          <a class="pub-link" href="https://doi.org/10.1038/s43247-025-02101-x" target="_blank" rel="noreferrer">DOI ↗</a>
+        </li>
+        <li>
+          <span class="pub-year">2025</span>
+          <div><span class="pub-title">Disentangling advection and Lagrangian evolution of surface chlorophyll in a nearshore submarine canyon</span><span class="pub-authors">McKee, <strong>Veatch</strong>, Kavanaugh, Kohut &amp; Doney · <em>Journal of Geophysical Research: Oceans</em></span></div>
+          <a class="pub-link" href="https://doi.org/10.1029/2024JC022101" target="_blank" rel="noreferrer">DOI ↗</a>
+        </li>
+        <li>
+          <span class="pub-year">2024</span>
+          <div><span class="pub-title">Quantifying the role of sub-mesoscale Lagrangian transport features in the concentration of plankton</span><span class="pub-authors"><strong>Veatch</strong>, Kohut, Oliver, Statscewich &amp; Fredj · <em>ICES Journal of Marine Science</em></span></div>
+          <a class="pub-link" href="https://doi.org/10.1093/icesjms/fsae036" target="_blank" rel="noreferrer">DOI ↗</a>
+        </li>
+        <li>
+          <span class="pub-year">2020</span>
+          <div><span class="pub-title">The effects of saltwater intrusion on germination success of standard and alternative crops</span><span class="pub-authors">de la Reguera, <strong>Veatch</strong>, Gedan &amp; Tully · <em>Environmental and Experimental Botany</em></span></div>
+          <a class="pub-link" href="https://doi.org/10.1016/j.envexpbot.2020.104254" target="_blank" rel="noreferrer">DOI ↗</a>
+        </li>
+      </ol>
+      <p class="section-footer"><a href="https://scholar.google.com/citations?user=aiHtKXMAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">View all publications on Google Scholar ↗</a></p>
+    </section>
+
+    <section class="impact-band" id="teaching">
+      <div class="section">
+        <div class="impact-grid">
+          <div>
+            <p class="eyebrow" style="color: var(--ocean)">Teaching &amp; impact</p>
+            <h2>Experiential learning that builds skills needed for success.</h2>
+          </div>
+          <div class="impact-items">
+            <article class="impact-item">
+              <h3>Teaching through authentic problems</h3>
+              <p>I design learning experiences around guided problem-solving, accessible programming, and independent research—from high-school Python courses to undergraduate oceanography and field projects.</p>
+            </article>
+            <article class="impact-item">
+              <h3>Building confidence with data</h3>
+              <p>I have led Python workshops for climate scientists and Earth-science educators, created interactive course infrastructure, and mentored undergraduate researchers through analysis and communication.</p>
+              <div class="resource-links" aria-label="Open teaching materials">
+                <a href="https://github.com/JackieVeatch/Intro_to_CompSci_Python" target="_blank" rel="noreferrer">High-school Python course ↗</a>
+                <a href="https://github.com/JackieVeatch/GCC_2025_PythonWorkshop" target="_blank" rel="noreferrer">Graduate Python workshop ↗</a>
+              </div>
+            </article>
+            <article class="impact-item">
+              <h3>Connecting science and society</h3>
+              <p>My service spans public talks, climate assessment review, polar research planning, professional societies, and community programs that invite more people into marine science.</p>
+            </article>
+          </div>
+        </div>
+        <div class="teaching-showcase">
+          <img src="assets/sea-teaching.jpg" alt="Jacquelyn Veatch teaching ocean circulation with an interactive world map">
+          <article class="thesis-card">
+            <span class="tag">Three Minute Thesis</span>
+            <h3>Don’t have time to read my dissertation?</h3>
+            <p>Check out my thesis in three minutes. This was my entry in the Three Minute Thesis Competition while I was a graduate student at Rutgers.</p>
+            <a class="button" href="assets/three-minute-thesis.mp4">Watch the three-minute thesis ▶</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fieldwork">
+      <div class="section-heading">
+        <h2>Field experience</h2>
+        <p>Ocean observing is a team effort. I have worked across polar and coastal environments with radar, gliders, ADCPs, CTDs, plankton nets, acoustics, and small-boat surveys.</p>
+      </div>
+      <div class="field-grid">
+        <article class="field-card">
+          <img src="assets/gomarie-field.jpg" alt="Jacquelyn Veatch with oceanographic instruments aboard the RV Marie Tharp in a southwest Greenland fjord">
+          <div class="field-card-body">
+            <span class="date">Greenland · 2025</span>
+            <h3>GoMarie Arctic field campaign</h3>
+            <p>Conducted repeat ADCP transects across five southwest Greenland fjords aboard the <em>RV Marie Tharp</em>, resolving tidal and diurnal meltwater flow alongside gas-flux measurements.</p>
+          </div>
+        </article>
+        <article class="field-card">
+          <img src="assets/field-photo-5571.jpg" alt="Scientists conducting nighttime deck operations aboard the USCGC Healy">
+          <div class="field-card-body">
+            <span class="date">Chukchi Sea · 2024</span>
+            <h3>Early Career Chief Scientist Training</h3>
+            <p>Helped plan and execute a ten-day interdisciplinary cruise aboard the <em>USCGC Healy</em>, coordinating sampling through a previously unmapped shelf-break canyon.</p>
+          </div>
+        </article>
+        <article class="field-card">
+          <img src="assets/palmer-field.jpg" alt="A research team working with ocean-observing equipment on the snow near Palmer Station, Antarctica">
+          <div class="field-card-body">
+            <span class="date">Palmer Station · 2020 &amp; 2023</span>
+            <h3>Team SWARM Antarctic field seasons</h3>
+            <p>Installed and recovered high-frequency radars and remote power systems, supported glider operations, and collected complementary biological and physical observations.</p>
+          </div>
+        </article>
+        <article class="field-card">
+          <img src="assets/martinique-field.jpg" alt="A Slocum glider operating in the ocean near the mountainous coast of Martinique">
+          <div class="field-card-body">
+            <span class="date">Caribbean &amp; Mid-Atlantic · 2022</span>
+            <h3>Coastal observing campaigns</h3>
+            <p>Supported glider operations in Martinique and coastal sampling in the Delaware Bay, adapting plans in real time using hydrographic observations.</p>
+          </div>
+        </article>
+      </div>
+      <div class="field-gallery-intro">
+        <h3>Serious science, joyful teams.</h3>
+        <p>Fieldwork runs on preparation, adaptability, and people who look out for one another. It also leaves room for shared meals, goofy moments, and having fun in extraordinary places.</p>
+      </div>
+      <div class="field-gallery" aria-label="More moments from fieldwork">
+        <figure class="wide">
+          <img src="assets/field-moment-ice.jpg" alt="A field team standing above iceberg-filled Antarctic waters with a research vessel in the distance">
+          <figcaption>Exploring Antarctic coastal environments as a team.</figcaption>
+        </figure>
+        <figure class="tall">
+          <img src="assets/field-moment-deck.jpg" alt="Jacquelyn Veatch working on deck in foul-weather gear">
+          <figcaption>Fieldwork means adapting to the conditions.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/field-moment-snacks.jpg" alt="Field team members preparing snacks together outside on the Antarctic snow">
+          <figcaption>Keeping team morale—and the field snacks—strong.</figcaption>
+        </figure>
+        <figure class="wide">
+          <img src="assets/field-moment-boat-team.jpg" alt="A field team smiling together in a small boat beside an Antarctic glacier">
+          <figcaption>Good field science is team science.</figcaption>
+        </figure>
+        <figure class="tall">
+          <img src="assets/field-moment-food-web.jpg" alt="Jacquelyn Veatch playfully inspecting a small marine organism during sample processing">
+          <figcaption>A very hands-on approach to the food web.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/field-moment-radar.jpg" alt="Jacquelyn Veatch standing with a shovel beside a radar installation in the Antarctic snow">
+          <figcaption>Sometimes ocean observing calls for a snow shovel.</figcaption>
+        </figure>
+        <figure class="tall">
+          <img src="assets/field-moment-martinique.jpg" alt="Jacquelyn Veatch smiling aboard a small research boat near Martinique">
+          <figcaption>A good day on the water.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section contact-grid">
+        <div>
+          <p class="eyebrow">Connect</p>
+          <h2>Let’s talk about oceans, data, or education.</h2>
+          <p>I welcome conversations about research collaborations, speaking, teaching, and opportunities to make ocean science more useful.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:jveatch@whoi.edu">jveatch@whoi.edu ↗</a>
+          <a href="https://orcid.org/0000-0002-1267-8383" target="_blank" rel="noreferrer">ORCID ↗</a>
+          <a href="https://github.com/JackieVeatch" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://scholar.google.com/citations?user=aiHtKXMAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar ↗</a>
+          <a href="assets/Veatch_CV_Aug2026.pdf">Curriculum vitae ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    © 2026 Jacquelyn Veatch
-  </footer>
-
+  <footer>© 2026 Jacquelyn Veatch · Physical Oceanographer</footer>
 </body>
 </html>
