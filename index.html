@@ -267,6 +267,28 @@
     .thesis-card p { color: rgba(255,255,255,.72); }
     .thesis-card .button { align-self: flex-start; margin-top: 1rem; }
 
+    .policy-band { background: #efe8dc; }
+    .policy-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; align-items: center; }
+    .policy-copy h2 { margin: 0 0 1.25rem; font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 500; letter-spacing: -.035em; }
+    .policy-copy p { color: var(--muted); }
+    .policy-copy .lead { color: var(--ink); font-size: clamp(1.45rem, 2.5vw, 2rem); }
+    .policy-feature {
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(32px, 5vw, 56px);
+      border-radius: 22px;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(188, 228, 229, .28), transparent 30%),
+        linear-gradient(145deg, var(--ocean), var(--deep));
+      box-shadow: var(--shadow);
+    }
+    .policy-feature h3 { max-width: 560px; margin: .75rem 0; font-size: clamp(2rem, 4vw, 3.35rem); font-weight: 500; }
+    .policy-feature p { max-width: 570px; margin: 0; color: rgba(255,255,255,.74); }
+    .policy-feature .button { align-self: flex-start; margin-top: 1.5rem; }
+
     .field-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
     .field-card { min-height: 340px; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); box-shadow: var(--shadow); }
     .field-card img { width: 100%; height: 250px; object-fit: cover; }
@@ -296,7 +318,7 @@
       .nav-links a:not(.nav-cta) { display: none; }
       .hero { min-height: 680px; }
       .hero::before { background-position: 58% center; }
-      .section-heading, .about-grid, .impact-grid, .teaching-showcase, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .section-heading, .about-grid, .impact-grid, .teaching-showcase, .policy-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
       .project-grid { grid-template-columns: 1fr; }
       .project { min-height: 0; }
       .project img, .project video { height: 310px; }
@@ -337,6 +359,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
+        <a href="#policy">Policy</a>
         <a class="nav-cta" href="assets/Veatch_CV_Aug2026.pdf">Download CV</a>
       </div>
     </div>
@@ -494,6 +517,23 @@
             <a class="button" href="assets/three-minute-thesis.mp4">Watch the three-minute thesis ▶</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="policy-band" id="policy">
+      <div class="section policy-grid">
+        <div class="policy-copy">
+          <p class="eyebrow" style="color: var(--ocean)">Science policy</p>
+          <h2>Connecting evidence with action.</h2>
+          <p class="lead">Science is most useful when people can understand it, question it, and apply it.</p>
+          <p>Science policy is important to me because decisions about climate, coasts, and public resources are strongest when they are grounded in evidence and supported by clear, two-way communication. I want my research to be useful beyond academic journals—helping communities, educators, and policymakers understand what ocean observations can tell us, why those insights matter, and where uncertainty remains.</p>
+        </div>
+        <article class="policy-feature">
+          <span class="tag">Public talk · June 2026</span>
+          <h3>Weather and Climate Livestream</h3>
+          <p>I presented my research to a general audience and discussed the connections among ocean circulation, marine ecosystems, weather, and climate.</p>
+          <a class="button" href="https://www.youtube.com/watch?v=TzOi_kvajnc&amp;t=1516s" target="_blank" rel="noreferrer">Watch the livestream ▶</a>
+        </article>
       </div>
     </section>
 
