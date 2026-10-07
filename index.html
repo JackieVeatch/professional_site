@@ -289,6 +289,37 @@
     .policy-feature p { max-width: 570px; margin: 0; color: rgba(255,255,255,.74); }
     .policy-feature .button { align-self: flex-start; margin-top: 1.5rem; }
 
+    .news-feature {
+      display: grid;
+      grid-template-columns: 180px 1fr auto;
+      gap: 38px;
+      align-items: center;
+      padding: clamp(30px, 5vw, 54px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .news-date { color: var(--coral); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .news-source { display: block; margin-top: .4rem; color: var(--muted); font-size: .86rem; }
+    .news-copy h3 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 500; line-height: 1.12; }
+    .news-copy p { max-width: 710px; margin: 0; color: var(--muted); }
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .7rem 1.15rem;
+      border-radius: 99px;
+      color: white;
+      background: var(--deep);
+      font-size: .82rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .news-link:hover { color: white; background: var(--ocean); }
+
     .field-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
     .field-card { min-height: 340px; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); box-shadow: var(--shadow); }
     .field-card img { width: 100%; height: 250px; object-fit: cover; }
@@ -319,6 +350,8 @@
       .hero { min-height: 680px; }
       .hero::before { background-position: 58% center; }
       .section-heading, .about-grid, .impact-grid, .teaching-showcase, .policy-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .news-feature { grid-template-columns: 1fr; gap: 20px; }
+      .news-link { justify-self: start; }
       .project-grid { grid-template-columns: 1fr; }
       .project { min-height: 0; }
       .project img, .project video { height: 310px; }
@@ -360,6 +393,7 @@
         <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
         <a href="#policy">Policy</a>
+        <a href="#news">News</a>
         <a class="nav-cta" href="assets/Veatch_CV_Aug2026.pdf">Download CV</a>
       </div>
     </div>
@@ -535,6 +569,24 @@
           <a class="button" href="https://www.youtube.com/watch?v=TzOi_kvajnc&amp;t=1516s" target="_blank" rel="noreferrer">Watch the livestream ▶</a>
         </article>
       </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="section-heading">
+        <h2>News</h2>
+        <p>Recent announcements, honors, and updates from my work in ocean science, education, and professional service.</p>
+      </div>
+      <article class="news-feature">
+        <div>
+          <span class="news-date">October 7, 2026</span>
+          <span class="news-source">WHOI Press Release</span>
+        </div>
+        <div class="news-copy">
+          <h3>Two WHOI community members elected to the Marine Technology Society Board</h3>
+          <p>I was elected Vice President of Early Career Ocean Professionals, a role focused on representing and creating opportunities for the next generation of ocean professionals across the Marine Technology Society.</p>
+        </div>
+        <a class="news-link" href="https://www.whoi.edu/press-room/news-release/mtsboard/" target="_blank" rel="noreferrer">Read the release ↗</a>
+      </article>
     </section>
 
     <section class="section" id="fieldwork">
